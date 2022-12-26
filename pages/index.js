@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
+import tailwindConfig from '../tailwind.config';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
@@ -20,10 +21,10 @@ export default function Home ({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>      
-      <h1 className="title">
+      <h1>
           Join <Link href="/posts/first-post">CASA!</Link>
       </h1>       {/* Add this <section> tag below the existing <section> tag */}
-      <p> 
+              <p> 
           Exploring AI, AR, Space, Web3, Movies and Art 🚀<br></br>
           Founder & CEO of @joinmirrorworld @mirror_matrix 🪞<br></br>
           Ex-product @bytedancetalk 🤖<br></br>
@@ -46,7 +47,7 @@ export default function Home ({ allPostsData }) {
             </li>
           ))}
         </ul>
-      </section>
+        </section>
     </Layout>
   );
 }
