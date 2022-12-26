@@ -1,14 +1,9 @@
-@import "tailwindcss/base";
-
-@import "tailwindcss/components";
-
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html,
 body {
-  background-color: black;
-  color:white;
-  padding: 0;
   margin: 0;
   font-family: 'Courier New', Courier, monospace, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
