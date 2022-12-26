@@ -1,5 +1,6 @@
 import { Html, Main, Head } from "next/document";
 import { NextScript } from "next/document";
+
 export default () => (
   <Html className="dark">
     <Head />
