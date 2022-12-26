@@ -1,8 +1,7 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    "./pages/posts/index.js",
+    "./components/layout.js",
   ],
   theme: {
     colors: {
@@ -15,7 +14,10 @@ module.exports = {
       "Maximum Green Yellow":"#C8E747",
       "Dark Moss Green":"#365208",
       "Lincoln Green":"#224208",
+    fontFamily: {
+      'mono': ['ui-monospace', 'SFMono-Regular'],
+      heading:['Poppins']
     },
-  },
-  plugins: [],
+  }
+}
 }
