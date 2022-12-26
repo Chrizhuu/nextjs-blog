@@ -1,42 +1,39 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from './layout.module.css';
-import utilStyles from '../styles/utils.module.css';
-import Link from 'next/link';
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 
-const name = 'Chris Zhu';
-export const siteTitle = 'CASA Blog';
+const name = "Chris Zhu";
+export const siteTitle = "CASA Blog";
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div className="max-w-[36rem] px-1 mt-12 mx-auto mb-24">
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="CASA Landing Page"
-        />
+        <meta name="description" content="CASA Landing Page" />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle,
+            siteTitle
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header className="flex flex-col items-center">
         {home ? (
           <>
             <Image
               priority
               src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
+              className="rounded-full"
               height={144}
               width={144}
               alt=""
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className="text-5xl leading-[1.2] font-extrabold -tracking-wider my-1">
+              {name}
+            </h1>
           </>
         ) : (
           <>
@@ -44,14 +41,14 @@ export default function Layout({ children, home }) {
               <Image
                 priority
                 src="/images/profile.jpg"
-                className={utilStyles.borderCircle}
+                className="rounded-full"
                 height={108}
                 width={108}
                 alt=""
               />
             </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
+            <h2 className="text-xl">
+              <Link href="/" className="text-inherit">
                 {name}
               </Link>
             </h2>
@@ -60,7 +57,7 @@ export default function Layout({ children, home }) {
       </header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div className="mt-12 mx-0 mb-0">
           <Link href="/">← Back to home</Link>
         </div>
       )}
